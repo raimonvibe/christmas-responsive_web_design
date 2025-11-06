@@ -1,6 +1,6 @@
 /**
  * Snowflake Animation Effect
- * Creates falling snowflakes on button hover
+ * Creates falling snowflakes on button and social media icon hover
  */
 
 (function() {
@@ -54,11 +54,11 @@
     }
 
     /**
-     * Initialize snowflake listeners on all buttons
+     * Initialize snowflake listeners on all buttons and social media icons
      */
     function initSnowflakes() {
-        // Target all button elements and anchor elements with button class
-        const buttons = document.querySelectorAll('button, .button, input[type="submit"], input[type="reset"], a.button');
+        // Target all button elements, anchor elements with button class, and social media icons
+        const buttons = document.querySelectorAll('button, .button, input[type="submit"], input[type="reset"], a.button, .icons a, a.icon');
 
         buttons.forEach(button => {
             button.addEventListener('mouseenter', function() {
