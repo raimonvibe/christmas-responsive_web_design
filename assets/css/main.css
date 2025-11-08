@@ -70,7 +70,7 @@
 }
 
 .red_bulb {
-  fill: #CA2128 !important;
+  fill: #CA2128;
   stroke: #6D6D6D;
   stroke-miterlimit: 10;
 }
