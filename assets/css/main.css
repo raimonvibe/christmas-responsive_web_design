@@ -55,12 +55,9 @@
   height: 40%;
   margin-top: 0;
   margin-bottom: 30px;
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: absolute;
   width: 100%;
-  z-index: 9999;
-  pointer-events: none;
+  z-index: -2;
 }
 
 .light_cord {
@@ -171,7 +168,6 @@
   -webkit-animation-delay: 1.2s;
   animation-delay: 1.2s;
 }
-
 
 
 html, body, div, span, applet, object,
