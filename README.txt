@@ -1,4 +1,3 @@
-Here’s a README you can use for your repository. Feel free to adjust wording, add badges, or tweak sections as needed.
 
 ---
 
@@ -95,3 +94,4 @@ This project is offered under the [insert appropriate license here] – feel fre
 
 Enjoy building your holiday-themed website! 🎁
 Let me know if you’d like me to add badges (e.g., build status, license), a screenshot section, or more details (such as browser support, accessibility notes).
+
