@@ -57,8 +57,8 @@
      * Initialize snowflake listeners on all buttons and social media icons
      */
     function initSnowflakes() {
-        // Target all button elements, anchor elements with button class, and social media icons
-        const buttons = document.querySelectorAll('button, .button, input[type="submit"], input[type="reset"], a.button, .icons a, a.icon');
+        // Target all button elements, anchor elements with button class, sidebar nav links, and social media icons
+        const buttons = document.querySelectorAll('button, .button, input[type="submit"], input[type="reset"], a.button, .icons a, a.icon, #sidebar nav a');
 
         buttons.forEach(button => {
             button.addEventListener('mouseenter', function() {
