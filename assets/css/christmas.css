@@ -1,0 +1,264 @@
+/*
+	Christmas themes layered on Hyperspace.
+	Classic + lights/snow come from christmas-responsive_web_design.
+	Holly keeps those decorations and remaps the palette to forest / berry / gold.
+*/
+
+/* Lights
+------------------------------------------------------------------ */
+
+@keyframes rv-xmas-glow {
+	0% { fill-opacity: 0.6; }
+	100% { fill-opacity: 1; }
+}
+
+#Christmas_Lights {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 40%;
+	margin: 0;
+	z-index: 14000;
+	pointer-events: none;
+	object-position: center;
+}
+
+#Christmas_Lights .light_cord {
+	fill: none;
+	stroke: #174700;
+}
+
+#Christmas_Lights .light_fixture {
+	fill: #134413;
+}
+
+#Christmas_Lights .red_bulb { fill: #CA2128; stroke: #6D6D6D; stroke-miterlimit: 10; }
+#Christmas_Lights .green_bulb { fill: #2D754A; stroke: #6D6D6D; stroke-miterlimit: 10; }
+#Christmas_Lights .blue_bulb { fill: #2C3EA8; stroke: #6D6D6D; stroke-miterlimit: 10; }
+#Christmas_Lights .white_bulb { fill: #F5EED7; stroke: #6D6D6D; stroke-miterlimit: 10; }
+#Christmas_Lights .gold_bulb { fill: #ffcc5e; stroke: #6D6D6D; stroke-miterlimit: 10; }
+
+#Christmas_Lights .bulb {
+	animation-name: rv-xmas-glow;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate;
+}
+
+#Christmas_Lights .blink-1 { animation-delay: 0.6s; }
+#Christmas_Lights .blink-2 { animation-delay: 2s; }
+#Christmas_Lights .blink-3 { animation-delay: 2s; }
+#Christmas_Lights .blink-4 { animation-delay: 6s; }
+#Christmas_Lights .blink-5 { animation-delay: 2.5s; }
+#Christmas_Lights .blink-6 { animation-delay: 0.3s; }
+#Christmas_Lights .blink-7 { animation-delay: 2s; }
+#Christmas_Lights .blink-8 { animation-delay: 0.2s; }
+#Christmas_Lights .blink-9 { animation-delay: 0.95s; }
+#Christmas_Lights .blink-10 { animation-delay: 1.2s; }
+
+@media screen and (max-width: 1280px) {
+	#Christmas_Lights {
+		height: 28%;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	#Christmas_Lights {
+		height: 18%;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	#Christmas_Lights .bulb {
+		animation: none;
+		fill-opacity: 1;
+	}
+}
+
+/* Snowflakes
+------------------------------------------------------------------ */
+
+.snowflake {
+	position: fixed;
+	pointer-events: none;
+	z-index: 10000;
+	color: #ffffff;
+	font-size: 20px;
+	user-select: none;
+	text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+	transition: top 2s ease-in, left 2s ease-in-out, opacity 2s ease-in;
+}
+
+html[data-theme="christmas"] button,
+html[data-theme="christmas"] .button,
+html[data-theme="christmas"] input[type="submit"],
+html[data-theme="christmas"] input[type="reset"],
+html[data-theme="holly"] button,
+html[data-theme="holly"] .button,
+html[data-theme="holly"] input[type="submit"],
+html[data-theme="holly"] input[type="reset"] {
+	overflow: visible;
+}
+
+/* Theme toggle
+------------------------------------------------------------------ */
+
+.rv-theme-toggle {
+	position: fixed;
+	right: 1.25em;
+	bottom: 4.85em;
+	max-width: calc(100vw - 2.5em);
+	white-space: nowrap;
+	z-index: 15000;
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+	padding: 0.85em 1.35em 0.85em 1.15em;
+	border: 1px solid rgba(255, 255, 255, 0.16) !important;
+	border-radius: 3em;
+	background: linear-gradient(135deg, #4a3579, #35264f);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+	color: #ffffff !important;
+	cursor: pointer;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 0.14em;
+	line-height: 1;
+	text-transform: uppercase;
+	height: auto;
+	transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.rv-theme-toggle:after {
+	content: none !important;
+	display: none !important;
+}
+
+.rv-theme-toggle:hover {
+	transform: translateY(-2px);
+	border-color: rgba(255, 209, 102, 0.6) !important;
+	box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5);
+}
+
+.rv-theme-toggle:focus-visible {
+	outline: 2px solid #ffd166;
+	outline-offset: 3px;
+}
+
+.rv-theme-toggle__icon {
+	font-size: 1.15em;
+	line-height: 1;
+}
+
+body.rv-tour-active .rv-theme-toggle {
+	opacity: 0;
+	pointer-events: none;
+}
+
+@media screen and (max-width: 736px) {
+	.rv-theme-toggle {
+		right: 0.9em;
+		bottom: 4.35em;
+		padding: 0.8em 1.1em 0.8em 0.95em;
+		font-size: 11px;
+	}
+}
+
+/* Holly palette
+------------------------------------------------------------------ */
+
+html[data-theme="holly"] body {
+	background: #1a2a1a;
+}
+
+html[data-theme="holly"] .wrapper.alt { background-color: #122018; }
+html[data-theme="holly"] .wrapper.style1 { background-color: #1e4d2b; }
+html[data-theme="holly"] .wrapper.style1-alt { background-color: #163820; }
+html[data-theme="holly"] .wrapper.style2 { background-color: #8b1e2d; }
+html[data-theme="holly"] .wrapper.style2-alt { background-color: #6b1522; }
+html[data-theme="holly"] .wrapper.style3 { background-color: #b8860b; }
+html[data-theme="holly"] .wrapper.style3-alt { background-color: #8f6a09; }
+
+html[data-theme="holly"] #header {
+	background-color: #1e4d2b;
+}
+
+html[data-theme="holly"] #sidebar {
+	background: #1a2a1a;
+}
+
+html[data-theme="holly"] #sidebar nav a:before {
+	background: #163820;
+}
+
+html[data-theme="holly"] #sidebar nav a:after,
+html[data-theme="holly"] body:not(.is-preload) .wrapper.style1 h1:after,
+html[data-theme="holly"] h1.major:after,
+html[data-theme="holly"] h2.major:after {
+	background-image: linear-gradient(to right, #1e4d2b, #c41e3a, #ffcc5e);
+}
+
+html[data-theme="holly"] #sidebar nav a.active:after {
+	background-image: linear-gradient(to right, #1e4d2b, #c41e3a, #ffcc5e);
+}
+
+@media screen and (max-width: 1280px) {
+	html[data-theme="holly"] #sidebar nav a:after {
+		background-image: none;
+		background-color: #c41e3a;
+	}
+}
+
+html[data-theme="holly"] .gradient-text,
+html[data-theme="holly"] .gradient-text-small {
+	background: linear-gradient(to right, #c41e3a, #ffcc5e, #f5eed7);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+html[data-theme="holly"] .spotlights > section > .image:before {
+	background: rgba(26, 42, 26, 0.9);
+}
+
+html[data-theme="holly"] .icon.major:before {
+	color: #1a2a1a;
+}
+
+html[data-theme="holly"] .wrapper.style1 .icon.major:before { color: #1e4d2b; }
+html[data-theme="holly"] .wrapper.style1-alt .icon.major:before { color: #163820; }
+html[data-theme="holly"] .wrapper.style2 .icon.major:before { color: #8b1e2d; }
+html[data-theme="holly"] .wrapper.style2-alt .icon.major:before { color: #6b1522; }
+html[data-theme="holly"] .wrapper.style3 .icon.major:before { color: #b8860b; }
+html[data-theme="holly"] .wrapper.style3-alt .icon.major:before { color: #8f6a09; }
+
+html[data-theme="holly"] input[type="submit"].primary,
+html[data-theme="holly"] input[type="reset"].primary,
+html[data-theme="holly"] input[type="button"].primary,
+html[data-theme="holly"] button.primary,
+html[data-theme="holly"] .button.primary {
+	background-color: #c41e3a;
+}
+
+html[data-theme="holly"] .rv-theme-toggle,
+html[data-theme="holly"] .rv-tour-launcher {
+	background: linear-gradient(135deg, #245c34, #163820);
+	border-color: rgba(255, 204, 94, 0.35) !important;
+}
+
+html[data-theme="holly"] .rv-theme-toggle:hover,
+html[data-theme="holly"] .rv-tour-launcher:hover {
+	border-color: rgba(255, 204, 94, 0.75) !important;
+}
+
+html[data-theme="holly"] .rv-tour,
+html[data-theme="holly"] .rv-tour-launcher {
+	--rv-card: #1e4d2b;
+	--rv-veil: rgba(18, 32, 24, 0.78);
+	--rv-warm-a: #c41e3a;
+	--rv-warm-b: #e8b923;
+	--rv-warm-c: #f5eed7;
+}

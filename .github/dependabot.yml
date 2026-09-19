@@ -1,0 +1,18 @@
+# Dependabot configuration.
+#
+# This site has no package.json - the JavaScript in assets/js is vendored
+# (committed files, not installed packages), which Dependabot cannot see. The
+# previous "npm" entry here pointed at a manifest that does not exist and so
+# never produced anything. Those libraries are checked every Monday by
+# .github/workflows/dependency-check.yml instead.
+#
+# What Dependabot can usefully track here is the actions used by that workflow.
+
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
